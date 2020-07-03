@@ -1,16 +1,17 @@
 // @flow
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
-import Grid from 'styled-components-grid';
-import AuthNotices from './components/AuthNotices';
-import Hero from './components/Hero';
-import HeroText from './components/HeroText';
-import SigninButtons from './components/SigninButtons';
-import { githubUrl } from '../../shared/utils/routeHelpers';
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import styled from "styled-components";
+import Grid from "styled-components-grid";
+import AuthNotices from "./components/AuthNotices";
+import Hero from "./components/Hero";
+import HeroText from "./components/HeroText";
+import SigninButtons from "./components/SigninButtons";
+import Branding from "../../shared/components/Branding";
+import { githubUrl } from "../../shared/utils/routeHelpers";
 
 type Props = {
-  notice?: 'google-hd' | 'auth-error' | 'hd-not-allowed',
+  notice?: "google-hd" | "auth-error" | "hd-not-allowed",
   lastSignedIn: string,
   googleSigninEnabled: boolean,
   slackSigninEnabled: boolean,
@@ -34,11 +35,9 @@ function Home(props: Props) {
           <p>
             <SigninButtons {...props} />
           </p>
-          <p>
-            <a href={githubUrl()}>Powered by Outline</a>
-          </p>
         </Hero>
       </Grid>
+      <Branding href={githubUrl()} />
     </span>
   );
 }

@@ -1,9 +1,9 @@
 // @flow
-import * as React from 'react';
-import styled from 'styled-components';
-import { observable } from 'mobx';
-import { observer } from 'mobx-react';
-import placeholder from './placeholder.png';
+import * as React from "react";
+import styled from "styled-components";
+import { observable } from "mobx";
+import { observer } from "mobx-react";
+import placeholder from "./placeholder.png";
 
 type Props = {
   src: string,
@@ -39,11 +39,11 @@ class Avatar extends React.Component<Props> {
   }
 }
 
-const AvatarWrapper = styled.span`
+const AvatarWrapper = styled.div`
   position: relative;
 `;
 
-const IconWrapper = styled.span`
+const IconWrapper = styled.div`
   display: flex;
   position: absolute;
   bottom: -2px;
@@ -56,6 +56,7 @@ const IconWrapper = styled.span`
 `;
 
 const CircleImg = styled.img`
+  display: block;
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   border-radius: 50%;
